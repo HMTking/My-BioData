@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { User, MapPin, Calendar, GraduationCap, IndianRupee } from 'lucide-react';
+import { MapPin, Calendar, GraduationCap, IndianRupee } from 'lucide-react';
 
 const About: React.FC = () => {
   // Calculate age dynamically

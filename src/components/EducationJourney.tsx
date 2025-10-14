@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Award, Target, Book } from 'lucide-react';
+import { GraduationCap, Target, Book } from 'lucide-react';
 
 const EducationJourney: React.FC = () => {
   const [ref, inView] = useInView({
