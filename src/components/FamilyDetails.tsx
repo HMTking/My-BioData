@@ -156,7 +156,7 @@ const FamilyDetails: React.FC = () => {
                 <div className="space-y-2">
                   <p className="text-blue-700 font-semibold">Haresh Iswarbhai Patel</p>
                   <p className="text-gray-700">Village: Amlai Kampa, Modasa</p>
-                  <p className="text-gray-600 text-sm">Occupation: Raj Marbal Modasa and Farmer</p>
+                  <p className="text-gray-600 text-sm">Occupation: Raj Marble Modasa and Farmer</p>
                 </div>
               </div>
             </div>
