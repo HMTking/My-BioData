@@ -155,26 +155,6 @@ const CharacterPersonality: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Lifestyle Preferences */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md">
-              <div className="flex items-center mb-4">
-                <Target className="w-8 h-8 text-amber-600 mr-4" />
-                <h3 className="text-2xl font-bold text-gray-900">Lifestyle Preferences</h3>
-              </div>
-              <div className="text-center">
-                <p className="text-xl text-amber-700 font-semibold mb-4">Adventurous Spirit with Grounded Foundation</p>
-                <p className="text-gray-600 leading-relaxed text-justify">
-                  I want a life that is full of unpredictable craziness but simultaneously highly stable. 
-                  I am a person who wants something new, something very exciting and full of adventure in life 
-                  while securing fundamental needs. I like to take calculated risks that bring growth and excitement, 
-                  believing that the perfect balance comes from having a solid foundation that allows for spontaneous adventures 
-                  and meaningful experiences without compromising security and stability.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Partner Preferences */}
           <motion.div variants={itemVariants}>
             <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md">
@@ -183,12 +163,11 @@ const CharacterPersonality: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Partner Preferences</h3>
               </div>
               <div className="text-center">
-                <p className="text-lg text-purple-700 font-semibold mb-4">Seeking Partner with Strong Values & Family Orientation</p>
+                <p className="text-lg text-purple-700 font-semibold mb-4">Seeking a Life Companion</p>
                 <p className="text-gray-600 leading-relaxed text-justify">
-                  Looking for someone who highly values honesty and purity in all aspects of life. 
-                  A partner who is emotional, understanding, and genuinely appreciates the importance of family. 
-                  Someone who naturally puts her family's needs before her own and believes in 
-                  maintaining strong moral values and traditional principles.
+                  I am looking for a life companion who values straightforward honesty and purity in all aspects of life. 
+                  I appreciate someone who prioritizes commitment and loyalty, and who respects and gives importance to family. 
+                  It is important that they find peace and real happiness in simplicity.
                 </p>
               </div>
             </div>

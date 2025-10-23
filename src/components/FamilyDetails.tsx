@@ -161,18 +161,6 @@ const FamilyDetails: React.FC = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Family Values */}
-          <motion.div variants={itemVariants} className="mt-16 text-center">
-            <div className="max-w-4xl mx-auto p-8 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Family Values</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We are a close-knit joint family that believes in traditional values, mutual respect, 
-                and supporting each other through all phases of life. Our family emphasizes education, 
-                hard work, honesty, and maintaining strong cultural roots while embracing progress.
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
