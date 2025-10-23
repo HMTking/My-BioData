@@ -142,12 +142,9 @@ const Hero: React.FC = () => {
                 className="text-gray-600 leading-relaxed text-base md:text-lg max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
                 variants={itemVariants}
               >
-                My life is built on a foundation of core values, with honesty and integrity being paramount. 
-                These principles guide every decision I make, both personally and professionally. I am a focused 
-                and disciplined individual who welcomes challenges as opportunities for growth. While I am confident 
-                in my abilities, I remain a down-to-earth person at heart, always prioritizing the needs of others. 
-                I hold immense respect for women and their efforts. Ultimately, I find fulfillment in simplicity 
-                and believe that true wealth is found in character, not in materialistic possessions.
+                My life is guided by honesty, integrity, and a strong sense of discipline. I see challenges as 
+                opportunities to learn and grow while staying humble and grounded. I truly admire the importance 
+                and efforts of women in our lives and believe that true wealth lies in character and simplicity.
               </motion.p>
             </motion.div>
           </motion.div>
