@@ -47,6 +47,25 @@ const Hero: React.FC = () => {
     setIsAutoPlay(true); // Resume auto-play when modal is closed
   };
 
+  // Function to handle swipe gestures
+  const handleDragEnd = (event: any, info: any) => {
+    const threshold = 50; // Minimum drag distance to trigger swipe
+    
+    if (info.offset.x > threshold) {
+      // Swiped right - go to previous image
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setIsAutoPlay(false);
+      setTimeout(() => setIsAutoPlay(true), 5000);
+    } else if (info.offset.x < -threshold) {
+      // Swiped left - go to next image
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setIsAutoPlay(false);
+      setTimeout(() => setIsAutoPlay(true), 5000);
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -93,6 +112,10 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
               onClick={openModal}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleDragEnd}
+              dragElastic={0.1}
             >
               <motion.img
                 key={currentImageIndex}
@@ -163,6 +186,10 @@ const Hero: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 onClick={openModal}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={handleDragEnd}
+                dragElastic={0.1}
               >
                 <motion.img
                   key={currentImageIndex}
