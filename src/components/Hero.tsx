@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import type { PanInfo } from 'framer-motion';
 
 // Import profile images
 import profileImage1 from '/images/new image.jpg';
@@ -47,18 +48,20 @@ const Hero: React.FC = () => {
     setIsAutoPlay(true); // Resume auto-play when modal is closed
   };
 
-  // Function to handle swipe gestures
-  const handleDragEnd = (event: any, info: any) => {
-    const threshold = 50; // Minimum drag distance to trigger swipe
+    // Function to handle swipe gestures
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    const threshold = 30; // Reduced threshold for easier swiping
+    const velocity = info.velocity.x;
     
-    if (info.offset.x > threshold) {
+    // Check both offset and velocity for better touch responsiveness
+    if (info.offset.x > threshold || velocity > 500) {
       // Swiped right - go to previous image
       setCurrentImageIndex((prevIndex) => 
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
       );
       setIsAutoPlay(false);
       setTimeout(() => setIsAutoPlay(true), 5000);
-    } else if (info.offset.x < -threshold) {
+    } else if (info.offset.x < -threshold || velocity < -500) {
       // Swiped left - go to next image
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setIsAutoPlay(false);
@@ -107,15 +110,19 @@ const Hero: React.FC = () => {
             className="relative"
           >
             <motion.div
-              className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer"
+              className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              onClick={openModal}
               drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
+              dragConstraints={{ left: -20, right: 20 }}
               onDragEnd={handleDragEnd}
-              dragElastic={0.1}
+              dragElastic={0.2}
+              dragMomentum={false}
+              onTap={() => {
+                // Simple tap to open modal
+                openModal();
+              }}
             >
               <motion.img
                 key={currentImageIndex}
@@ -181,15 +188,19 @@ const Hero: React.FC = () => {
           >
             <div className="relative">
               <motion.div
-                className="w-96 h-96 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer"
+                className="w-96 h-96 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                onClick={openModal}
                 drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
+                dragConstraints={{ left: -30, right: 30 }}
                 onDragEnd={handleDragEnd}
-                dragElastic={0.1}
+                dragElastic={0.2}
+                dragMomentum={false}
+                onTap={() => {
+                  // Simple tap to open modal
+                  openModal();
+                }}
               >
                 <motion.img
                   key={currentImageIndex}
