@@ -44,13 +44,13 @@ const EducationJourney: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Academic Excellence & Recognition</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
-                  <div className="text-3xl font-bold text-green-600">387</div>
+                  <div className="text-3xl font-bold text-green-600">AIR 387</div>
                   <div className="text-gray-700">GATE Computer Science Rank</div>
                   <div className="text-gray-500 text-sm">All India Rank 387</div>
                   <div className="text-gray-400 text-xs">Out of 170,000+ candidates</div>
                 </div>
                 <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
-                  <div className="text-3xl font-bold text-purple-600">877</div>
+                  <div className="text-3xl font-bold text-purple-600">AIR 877</div>
                   <div className="text-gray-700">GATE Data Science & Artificial Intelligence Rank</div>
                   <div className="text-gray-500 text-sm">All India Rank 877</div>
                   <div className="text-gray-400 text-xs">Out of 57,000+ candidates</div>
