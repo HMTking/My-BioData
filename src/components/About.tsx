@@ -87,10 +87,11 @@ const About: React.FC = () => {
                   </h4>
                   <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <div>
-                      <h5 className="font-semibold text-gray-900">Bachelor of Technology</h5>
-                      <p className="text-gray-700 text-sm">Computer Science & Engineering</p>
-                      <p className="text-gray-500 text-sm">Indian Institute of Information Technology, Surat</p>
-                      <p className="text-gray-500 text-sm">2022 - 2026 (Final Year)</p>
+                                            
+                      <h5 className="font-semibold text-gray-900">Indian Institute of Information Technology, Surat (IIIT Surat)</h5>
+                      <p className="text-gray-700 text-sm">Computer Science & Engineering (2022-2026)</p>
+                     
+                      <p className="text-gray-700 text-sm">CGPA: 8.64/10</p>
                     </div>
                   </div>
                 </div>
