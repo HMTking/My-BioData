@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MapPin, Calendar, GraduationCap, IndianRupee } from 'lucide-react';
+import { MapPin, Calendar, GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
   // Calculate age dynamically
@@ -125,32 +125,6 @@ const About: React.FC = () => {
                     <div>
                       <h5 className="font-semibold text-gray-900">Weight</h5>
                       <p className="text-gray-700 text-sm">64kg</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Family Income Sources */}
-            <motion.div variants={itemVariants} className="mt-8">
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-gray-700 flex items-center">
-                  <IndianRupee className="mr-2 w-5 h-5" />
-                  Family Income Sources
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                      <h5 className="font-semibold text-gray-900">Farming Land</h5>
-                      <p className="text-gray-700 text-sm">35 Vigha Agricultural Land</p>
-                      <p className="text-gray-500 text-sm">Managed by Elder Uncle</p>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div>
-                      <h5 className="font-semibold text-gray-900">Father's Profession</h5>
-                      <p className="text-gray-700 text-sm">Area Sales Manager</p>
-                      <p className="text-gray-500 text-sm">RBL Bank</p>
                     </div>
                   </div>
                 </div>

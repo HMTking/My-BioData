@@ -112,66 +112,6 @@ const CharacterPersonality: React.FC = () => {
               </div>
             </motion.div>
           </div>
-
-          {/* Hobbies & Interests */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <div className="p-8 bg-gray-50 rounded-lg border border-gray-200 shadow-md">
-              <div className="flex items-center mb-6">
-                <Heart className="w-8 h-8 text-green-600 mr-4" />
-                <h3 className="text-2xl font-bold text-gray-900">Hobbies & Interests</h3>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-green-700 mb-3">Hobbies</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                      Chess - Strategic thinking and mental exercise
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                      Talking with elderly people - Learning from wisdom
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                      Playing with kids - Bringing joy and happiness
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-green-700 mb-3">Interests</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                      Meditation - Mental peace and spiritual growth
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                      Investments - Financial planning and growth
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Partner Preferences */}
-          <motion.div variants={itemVariants}>
-            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md">
-              <div className="flex items-center mb-4">
-                <Heart className="w-8 h-8 text-purple-600 mr-4" />
-                <h3 className="text-2xl font-bold text-gray-900">Partner Preferences</h3>
-              </div>
-              <div className="text-center">
-                <p className="text-lg text-purple-700 font-semibold mb-4">Seeking a Life Companion</p>
-                <p className="text-gray-600 leading-relaxed text-justify">
-                  I am looking for a life companion who values straightforward honesty and purity in all aspects of life. 
-                  I appreciate someone who prioritizes commitment and loyalty, and who respects and gives importance to family. 
-                  It is important that they find peace and real happiness in simplicity.
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
