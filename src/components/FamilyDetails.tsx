@@ -57,7 +57,7 @@ const FamilyDetails: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <p className="text-blue-700 font-semibold">Vinodkumar Kanaiyalal</p>
-                <p className="text-gray-700">Area Sales Manager</p>
+                <p className="text-gray-700">Senior Manager</p>
                 <p className="text-gray-500 text-sm">RBL Bank</p>
                 <p className="text-gray-500 text-sm">Contact: 9662506758</p>
               </div>
@@ -75,23 +75,21 @@ const FamilyDetails: React.FC = () => {
               <div className="space-y-2">
                 <p className="text-rose-700 font-semibold">Geetaben Vinodkumar</p>
                 <p className="text-gray-700">Housewife</p>
-                <p className="text-gray-500 text-sm">Caring & dedicated to family</p>
               </div>
             </motion.div>
 
-            {/* Sister */}
+            {/* Younger Sister */}
             <motion.div
               variants={itemVariants}
               className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex items-center mb-4">
                 <User className="w-6 h-6 text-purple-600 mr-3" />
-                <h3 className="text-xl font-semibold text-gray-900">Sister</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Younger Sister</h3>
               </div>
               <div className="space-y-2">
                 <p className="text-purple-700 font-semibold">Janvi</p>
                 <p className="text-gray-700">Age: 21 years</p>
-                <p className="text-gray-500 text-sm">Graduated</p>
               </div>
             </motion.div>
 
@@ -123,7 +121,6 @@ const FamilyDetails: React.FC = () => {
               <div className="space-y-2">
                 <p className="text-rose-700 font-semibold">Sharmistaben Madhusudanbhai</p>
                 <p className="text-gray-700">Housewife</p>
-                <p className="text-gray-500 text-sm">Family supporter</p>
               </div>
             </motion.div>
 
@@ -139,7 +136,6 @@ const FamilyDetails: React.FC = () => {
               <div className="space-y-2">
                 <p className="text-amber-700 font-semibold">Kanaiyalal Jivarajbhai</p>
                 <p className="text-amber-700 font-semibold">Indiraben Kanaiyalal</p>
-                <p className="text-gray-500 text-sm">Blessing & guidance</p>
               </div>
             </motion.div>
           </div>

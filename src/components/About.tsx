@@ -107,7 +107,7 @@ const About: React.FC = () => {
                   <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <div>
                       <h5 className="font-semibold text-gray-900">Age</h5>
-                      <p className="text-gray-700 text-sm">{age} years</p>
+                      <p className="text-gray-700 text-sm">22 years completed</p>
                     </div>
                   </div>
                   <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
