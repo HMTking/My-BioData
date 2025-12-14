@@ -4,20 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { MapPin, Calendar, GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
-  // Calculate age dynamically
-  const calculateAge = (birthDate: string): number => {
-    const today = new Date();
-    const birth = new Date(birthDate.split('/').reverse().join('-')); // Convert DD/MM/YYYY to YYYY-MM-DD
-    let age = today.getFullYear() - birth.getFullYear();
-    const monthDiff = today.getMonth() - birth.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
-  const age = calculateAge('28/04/2003');
-
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
