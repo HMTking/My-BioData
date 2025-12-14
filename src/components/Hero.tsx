@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import type { PanInfo } from 'framer-motion';
 
 // Import profile images
-import profileImage1 from '/images/new image.jpg';
+import profileImage1 from '/images/new-image.jpg';
 import profileImage4 from '/images/bio4.jpg';
 import profileImage5 from '/images/bio5.jpg';
 
