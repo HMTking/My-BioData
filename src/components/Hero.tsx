@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import type { PanInfo } from 'framer-motion';
 
 // Import profile images
-import profileImage1 from '/images/new-image.jpg';
-import profileImage4 from '/images/bio4.jpg';
-import profileImage5 from '/images/bio5.jpg';
+import image1 from '/images/image1.jpg';
+import image2 from '/images/image2.jpg';
+import image3 from '/images/image3.jpg';
 
 const Hero: React.FC = () => {
   // State for image swapping
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const images = [profileImage1, profileImage4, profileImage5];
+  const images = [image1, image2, image3];
 
   // Effect for image swapping every 4 seconds
   useEffect(() => {
