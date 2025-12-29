@@ -12,6 +12,11 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 body {

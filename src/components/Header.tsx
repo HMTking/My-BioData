@@ -23,11 +23,22 @@ const Header: React.FC = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
     setIsOpen(false);
+    
+    // Small delay to ensure mobile menu closes first
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80; // Account for fixed header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   return (
