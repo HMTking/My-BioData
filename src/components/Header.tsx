@@ -20,7 +20,6 @@ const Header: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Family', href: '#family' },
     { name: 'Education', href: '#education' },
-    { name: 'Character', href: '#character' },
   ];
 
   const scrollToSection = (href: string) => {
