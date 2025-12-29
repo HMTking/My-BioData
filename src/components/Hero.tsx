@@ -12,6 +12,7 @@ const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const images = [image1, image2, image3];
 
   // Effect for image swapping every 4 seconds
@@ -48,24 +49,53 @@ const Hero: React.FC = () => {
     setIsAutoPlay(true); // Resume auto-play when modal is closed
   };
 
-    // Function to handle swipe gestures
+  // Function to handle drag start
+  const handleDragStart = () => {
+    setIsDragging(false);
+  };
+
+  // Function to handle swipe gestures
   const handleDragEnd = (_: any, info: PanInfo) => {
-    const threshold = 30; // Reduced threshold for easier swiping
+    const threshold = 50; // Minimum swipe distance
     const velocity = info.velocity.x;
     
+    // Mark as dragging if there was ANY movement
+    if (Math.abs(info.offset.x) > 3 || Math.abs(velocity) > 50) {
+      setIsDragging(true);
+      // Reset drag flag after a longer delay
+      setTimeout(() => setIsDragging(false), 500);
+    }
+    
     // Check both offset and velocity for better touch responsiveness
-    if (info.offset.x > threshold || velocity > 500) {
+    if (info.offset.x > threshold || velocity > 300) {
       // Swiped right - go to previous image
       setCurrentImageIndex((prevIndex) => 
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
       );
       setIsAutoPlay(false);
       setTimeout(() => setIsAutoPlay(true), 5000);
-    } else if (info.offset.x < -threshold || velocity < -500) {
+    } else if (info.offset.x < -threshold || velocity < -300) {
       // Swiped left - go to next image
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setIsAutoPlay(false);
       setTimeout(() => setIsAutoPlay(true), 5000);
+    }
+  };
+
+  // Function to handle swipe gestures in modal
+  const handleModalDragEnd = (_: any, info: PanInfo) => {
+    const threshold = 50; // Minimum swipe distance
+    const velocity = info.velocity.x;
+    
+    // Check both offset and velocity for better touch responsiveness
+    if (info.offset.x > threshold || velocity > 300) {
+      // Swiped right - go to previous image
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    } else if (info.offset.x < -threshold || velocity < -300) {
+      // Swiped left - go to next image
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }
   };
 
@@ -110,18 +140,22 @@ const Hero: React.FC = () => {
             className="relative"
           >
             <motion.div
-              className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none"
+              className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none touch-pan-y"
+              style={{ touchAction: 'pan-y' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
               drag="x"
-              dragConstraints={{ left: -20, right: 20 }}
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
-              dragElastic={0.2}
-              dragMomentum={false}
-              onTap={() => {
-                // Simple tap to open modal
-                openModal();
+              dragElastic={0.3}
+              dragMomentum={true}
+              onClick={() => {
+                // Only open modal if not dragging
+                if (!isDragging) {
+                  openModal();
+                }
               }}
             >
               <motion.img
@@ -188,18 +222,22 @@ const Hero: React.FC = () => {
           >
             <div className="relative">
               <motion.div
-                className="w-96 h-96 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none"
+                className="w-96 h-96 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-2xl cursor-pointer select-none touch-pan-y"
+                style={{ touchAction: 'pan-y' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 drag="x"
-                dragConstraints={{ left: -30, right: 30 }}
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
-                dragElastic={0.2}
-                dragMomentum={false}
-                onTap={() => {
-                  // Simple tap to open modal
-                  openModal();
+                dragElastic={0.3}
+                dragMomentum={true}
+                onClick={() => {
+                  // Only open modal if not dragging
+                  if (!isDragging) {
+                    openModal();
+                  }
                 }}
               >
                 <motion.img
@@ -273,12 +311,19 @@ const Hero: React.FC = () => {
 
             {/* Full Size Image */}
             <motion.img
+              key={currentImageIndex}
               src={images[currentImageIndex]}
               alt="Datt Patel - Full Size"
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-grab active:cursor-grabbing select-none"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              dragMomentum={true}
+              onDragEnd={handleModalDragEnd}
+              style={{ touchAction: 'pan-y' }}
             />
 
             {/* Image Navigation Dots in Modal */}
